@@ -156,6 +156,20 @@ main.box:before{
 .svg_icons {
   transform: scale(4);
 }
+.about-title {
+  font-size: 7rem;
+  letter-spacing: 1rem;
+   background: -webkit-linear-gradient(#0a6cff, #e60590);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about-decription{
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 1.5rem;
+  padding-bottom: 8rem;
+  width: 40%;
+}
 .x-large {
   font-size: 4rem;
   line-height: 1.2;
