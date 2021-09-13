@@ -1,4 +1,212 @@
-.App {
+
+/* Global Styles */
+:root {
+  --primary-color: #1a1a1a;
+  --dark-color: #2b2b2b50;
+  --light-color: #ffffff;
+  --danger-color: #bb2148;
+  --success-color: #28a745;
+  
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  background-color: #fff;
+  color: #333;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  padding-bottom: 3rem;
+}
+
+a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: relative;
+  background: rgb(255, 0, 106);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+a:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  width: 100%;
+}
+.product-img {
+  width: 60%;
+  height: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.small-img {
+  width: 30%;
+  height: 30%;
+}
+
+
+/* Utilities */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  background-color: #bb2148;
+  color: #bb2148;
+}
+.main-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: rgb(255,0,106);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.973) 0%, rgb(51, 51, 51) 68%);
+   color: #FFF;
+  border-bottom: 5px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #743ad5, #8a063dd2);
+
+}
+main.box:before{
+  position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: border; 
+    border-radius: inherit; 
+    background: linear-gradient(to right, red, orange);
+}
+.content-box {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin-top: 7rem;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+
+}
+
+.footer{
+  display: flex;
+  background-color:#1a1a1a;
+  height: 10rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+.content_seperator_line{
+  width: 80%;
+  border-bottom: 5px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #f80404, #e78c03d2);
+}
+
+/* Text Styles*/
+.prdouct-name{
+  font-size: 1.5rem;
+  color: #1a1a1a;
+}
+.prdouct-price{
+  font-size: 1rem;
+  color: #1a1a1ab0;
+}
+.prdouct-price-sale{
+  font-size: 1rem;
+  color: #ff9900b0;
+  text-decoration: none;
+}
+.sale-text{
+  font-size: 7rem;
+  letter-spacing: 1rem;
+   background: -webkit-linear-gradient(#d7761b, #e6e205);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.sale-description{
+  display: flex;
+  flex-direction: column;
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.about-title{
+  font-size: 7rem;
+  background: -webkit-linear-gradient(#00c3ff, #e40b41d2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.about-decription{
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 1.5rem;
+  padding-bottom:8rem;
+  width: 40%;
+}
+.svg_icons {
+  transform: scale(4);
+}
+.x-large {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.large {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.lead {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--light-color);
+}
+
+.text-dark {
+  color: var(--dark-color);
+}
+
+.text-success {
+  color: var(--success-color);
+}
+
+.text-danger {
+  color: var(--danger-color);
+}
+
+.text-center {
   text-align: center;
 }
 
@@ -24,15 +232,12 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar a:hover {
+  color: var(--light-color);
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.navbar .welcome span {
+  margin-right: 0.6rem;
 }
