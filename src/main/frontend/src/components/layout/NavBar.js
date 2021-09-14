@@ -2,11 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-
+import HomeIcon from '@material-ui/icons/Home';
 const NavBar = ({ title, subTitle }) => {
   return (
     <nav className='navbar bg-primary'>
       <ul className='navBarChoices'>
+        <Link to = "/"><HomeIcon fontSize="medium"/></Link>
         <Link to='/pcParts' className=''>
           PC PARTS
         </Link>
@@ -21,10 +22,5 @@ const NavBar = ({ title, subTitle }) => {
       
     </nav>
   );
-};
-
-NavBar.defaultProps = {
-  title: "Portfolio",
-  subTitle: "Maris Heinols",
 };
 export default NavBar;

@@ -1,8 +1,15 @@
-import React,{ useState }  from 'react'
+import React,{ useState,useEffect }  from 'react'
 import AddIcon from '@material-ui/icons/Add';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Aos from 'aos';
+import "aos/dist/aos.css";
 
 const Home = ()=> {
+
+    useEffect(()=>{
+        Aos.init({duration:2000})
+    },[])
+
     const [products, setProduct] = useState([{
     name: "Playstation 5",
     price: 500,
@@ -57,7 +64,7 @@ const Home = ()=> {
                             <ExpandMoreIcon className="svg_icons"/>
                         </div>
                     </div>
-                        <div className="grid-4 py-3">
+                        <div data-aos="fade-up" className="grid-4 py-3">
                             {products.map((product) => {
                                 return(
                                 <div className="product-card ">
