@@ -12,9 +12,10 @@ import java.util.List;
 public class GoodsConfig {
 
     @Bean
-    CommandLineRunner commandLineRunner (GoodsRepository goodsRepository){
+    CommandLineRunner commandLineRunner(GoodsRepository goodsRepository) {
         return args -> {
             Goods goodsFirst = new Goods("test",
+                    "test",
                     "test",
                     "test",
                     "test",

@@ -13,21 +13,27 @@ import java.util.Optional;
 public class GoodsController {
 
 
-
     @Autowired
     private GoodsService goodsService;
     //private GoodsRepository goodsRepository;
 
     @GetMapping(value = "/goods")
-    public List<Goods> getGoods(){
+    public List<Goods> getGoods() {
         return goodsService.getGoods();
     }
 
     @GetMapping(path = "/goods/{goodsId}")
-    public Optional<Goods> getGoodsById(@PathVariable("goodsId") long goodId) {return goodsService.getGoodsById(goodId);}
+    public Optional<Goods> getGoodsById(@PathVariable("goodsId") long goodId) {
+        return goodsService.getGoodsById(goodId);
+    }
 
     @PostMapping
-    public void registerNewGoods (@RequestBody Goods goods) {
+    public void registerNewGoods(@RequestBody Goods goods) {
         goodsService.addNewGoods(goods);
+    }
+
+    @GetMapping(path = "/goods/category/{category}")
+    public List<Goods> getGoodsByCategory(@PathVariable("category") String category) {
+        return goodsService.findByCategory(category);
     }
 }

@@ -13,6 +13,7 @@ public class Goods {
     private String brand;
     private String model;
     private String description;
+    private String category;
     private double price;
     private Long id;
 
@@ -20,11 +21,12 @@ public class Goods {
     public Goods() {
     }
 
-    public Goods(String name, String brand, String model, String description, double price) {
+    public Goods(String name, String brand, String model, String description, String category, double price) {
         this.name = name;
         this.brand = brand;
         this.model = model;
         this.description = description;
+        this.category = category;
         this.price = price;
     }
 
@@ -61,6 +63,14 @@ public class Goods {
         this.description = description;
     }
 
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -87,6 +97,7 @@ public class Goods {
                 ", brand='" + brand + '\'' +
                 ", model='" + model + '\'' +
                 ", description='" + description + '\'' +
+                ", category='" + category + '\'' +
                 ", price=" + price +
                 ", id=" + id +
                 '}';
