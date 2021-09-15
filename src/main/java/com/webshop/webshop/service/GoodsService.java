@@ -3,6 +3,7 @@ package com.webshop.webshop.service;
 import com.webshop.webshop.model.Goods;
 import com.webshop.webshop.repository.GoodsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -37,4 +38,19 @@ public class GoodsService {
         return goodsRepository.findByCategory(category);
     }
 
+    public List<Goods> getGoodsSortedByName() {
+        return goodsRepository.findAll(Sort.by("name"));
+    }
+
+    public List<Goods> getGoodsSortedByBrand() {
+        return goodsRepository.findAll(Sort.by("brand"));
+    }
+
+    public List<Goods> getGoodsSortedByPriceAsc() {
+        return goodsRepository.findAll(Sort.by(Sort.Direction.ASC, "price"));
+    }
+
+    public List<Goods> getGoodsSortedByPriceDesc() {
+        return goodsRepository.findAll(Sort.by(Sort.Direction.DESC, "price"));
+    }
 }

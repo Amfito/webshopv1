@@ -36,4 +36,24 @@ public class GoodsController {
     public List<Goods> getGoodsByCategory(@PathVariable("category") String category) {
         return goodsService.findByCategory(category);
     }
+
+    @GetMapping(value = "/goods/byname")
+    public List<Goods> getGoodsSortedByName() {
+        return goodsService.getGoodsSortedByName();
+    }
+
+    @GetMapping(value = "/goods/bybrand")
+    public List<Goods> getGoodsSortedByBrand() {
+        return goodsService.getGoodsSortedByBrand();
+    }
+
+    @GetMapping(value = "/goods/bypriceasc")
+    public List<Goods> getGoodsSortedByPriceAsc() {
+        return goodsService.getGoodsSortedByPriceAsc();
+    }
+
+    @GetMapping(value = "/goods/bypricedesc")
+    public List<Goods> getGoodsSortedByPriceDesc() {
+        return goodsService.getGoodsSortedByPriceDesc();
+    }
 }
