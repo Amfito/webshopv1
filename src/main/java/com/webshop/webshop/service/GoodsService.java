@@ -4,11 +4,8 @@ import com.webshop.webshop.model.Goods;
 import com.webshop.webshop.repository.GoodsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.Specification;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -53,4 +50,10 @@ public class GoodsService {
     public List<Goods> getGoodsSortedByPriceDesc() {
         return goodsRepository.findAll(Sort.by(Sort.Direction.DESC, "price"));
     }
+
+    public List<Goods> getGoodsOnSale(double zero) {
+        return goodsRepository.findByPriceGreaterThan(zero);
+    }
+
 }
+//

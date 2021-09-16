@@ -1,7 +1,6 @@
 package com.webshop.webshop.controller;
 
 import com.webshop.webshop.model.Goods;
-import com.webshop.webshop.repository.GoodsRepository;
 import com.webshop.webshop.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -56,4 +55,7 @@ public class GoodsController {
     public List<Goods> getGoodsSortedByPriceDesc() {
         return goodsService.getGoodsSortedByPriceDesc();
     }
+
+    @GetMapping(value = "/goods/goodsonsale")
+    public List<Goods> getGoodsOnSale() {return goodsService.getGoodsOnSale(0);}
 }
