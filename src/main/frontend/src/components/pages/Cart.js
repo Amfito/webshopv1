@@ -73,7 +73,7 @@ const Cart = () => {
 								{product.count === 0
 									? globalDispatch({
 											type: "REMOVE_ITEM",
-											payload: index,
+											payload: product.id,
 									  })
 									: ""}
 								<h2>{product.count}</h2>

@@ -2,14 +2,14 @@ import React, {
 	useEffect,
 	useContext,
 } from "react";
-import AddIcon from "@material-ui/icons/Add";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import context from "../Context/context";
+import AddIcon from "@material-ui/icons/Add";
 
-const Home = () => {
+const Products = () => {
 	const { globalState, globalDispatch } =
 		useContext(context);
 
@@ -17,25 +17,15 @@ const Home = () => {
 		Aos.init({ duration: 2000 });
 	}, []);
 
-	const products = globalState.products;
+	let products = globalState.products;
 
 	return (
 		<div className="main-box">
 			<div className="content-box">
-				<h2 className="sale-text">AUTUMN SALE</h2>
-				<hr className="content-seperator-line " />
-				<div
-					className="sale-description "
-					style={{ paddingTop: "6rem" }}
-				>
-					<h3>UP TO 50%</h3>
-					<h3 style={{ paddingBottom: "2rem" }}>
-						SEE THE DEALS BELLOW
-					</h3>
-					<div style={{ paddingBottom: "5rem" }}>
-						<ExpandMoreIcon className="svg_icons" />
-					</div>
-				</div>
+				<h2 className="category-text">
+					{globalState.selectedCategory.toUpperCase()}
+				</h2>
+				<hr className="products-content-seperator-line" />
 				<div
 					data-aos="fade-up"
 					className="grid-4 py-3"
@@ -125,4 +115,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default Products;
