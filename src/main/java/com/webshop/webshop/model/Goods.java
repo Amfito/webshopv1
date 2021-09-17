@@ -14,22 +14,28 @@ public class Goods {
     private String model;
     private String description;
     private String category;
+    private String attributes;
+    private String image;
     private double price;
+    private double salesprice;
     private Long id;
+
 
 
     public Goods() {
     }
 
-    public Goods(String name, String brand, String model, String description, String category, double price) {
+    public Goods(String name, String brand, String model, String description, String category, String attributes, String image, double price, double salesprice) {
         this.name = name;
         this.brand = brand;
         this.model = model;
         this.description = description;
         this.category = category;
+        this.attributes = attributes;
+        this.image = image;
         this.price = price;
+        this.salesprice = salesprice;
     }
-
 
     public String getName() {
         return name;
@@ -79,6 +85,29 @@ public class Goods {
         this.price = price;
     }
 
+    public String getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(String attributes) {
+        this.attributes = attributes;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public double getSalesprice() {
+        return salesprice;
+    }
+
+    public void setSalesprice(double salesprice) {
+        this.salesprice = salesprice;
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -98,7 +127,10 @@ public class Goods {
                 ", model='" + model + '\'' +
                 ", description='" + description + '\'' +
                 ", category='" + category + '\'' +
+                ", attributes='" + attributes + '\'' +
+                ", image='" + image + '\'' +
                 ", price=" + price +
+                ", salesprice=" + salesprice +
                 ", id=" + id +
                 '}';
     }

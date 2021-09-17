@@ -43,17 +43,11 @@ public class GoodsService {
         return goodsRepository.findAll(Sort.by("brand"));
     }
 
-    public List<Goods> getGoodsSortedByPriceAsc() {
-        return goodsRepository.findAll(Sort.by(Sort.Direction.ASC, "price"));
-    }
+    public List<Goods> getGoodsSortedByPriceAsc() { return goodsRepository.findAll(Sort.by(Sort.Direction.ASC, "price")); }
 
-    public List<Goods> getGoodsSortedByPriceDesc() {
-        return goodsRepository.findAll(Sort.by(Sort.Direction.DESC, "price"));
-    }
+    public List<Goods> getGoodsSortedByPriceDesc() { return goodsRepository.findAll(Sort.by(Sort.Direction.DESC, "price")); }
 
-    public List<Goods> getGoodsOnSale(double zero) {
-        return goodsRepository.findByPriceGreaterThan(zero);
-    }
+    public List<Goods> getGoodsOnSale(double zero) { return goodsRepository.findBySalespriceGreaterThan(zero); }
 
 }
-//
+

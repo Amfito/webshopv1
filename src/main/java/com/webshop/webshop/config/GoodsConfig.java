@@ -11,17 +11,17 @@ import java.util.List;
 @Configuration
 public class GoodsConfig {
 
-    @Bean
-    CommandLineRunner commandLineRunner(GoodsRepository goodsRepository) {
-        return args -> {
-            Goods goodsFirst = new Goods("test",
-                    "test",
-                    "test",
-                    "test",
-                    "test",
-                    155);
-
-            goodsRepository.saveAll(List.of(goodsFirst));
-        };
-    }
+//    @Bean
+//    CommandLineRunner commandLineRunner(GoodsRepository goodsRepository) {
+//        return args -> {
+//            Goods goodsFirst = new Goods("test",
+//                    "test",
+//                    "test",
+//                    "test",
+//                    "test",
+//                    155);
+//
+//            goodsRepository.saveAll(List.of(goodsFirst));
+//        };
+//    }
 }

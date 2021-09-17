@@ -12,5 +12,5 @@ public interface GoodsRepository extends JpaRepository<Goods, Long> {
 
     List<Goods> findByCategory(String category);
 
-    List<Goods> findByPriceGreaterThan(double zero);
+    List<Goods> findBySalespriceGreaterThan(double zero);
 }
