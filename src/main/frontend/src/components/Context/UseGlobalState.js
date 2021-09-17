@@ -187,6 +187,7 @@ const reducer = (
 				...state,
 				cart: [...decreaseState],
 			};
+
 		default: {
 			return state;
 		}
