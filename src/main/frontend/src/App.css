@@ -455,6 +455,7 @@ main.box:before {
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-end;
+	height: 4rem;
 }
 .card-info-box {
 	display: flex;

@@ -15,8 +15,14 @@ import axios from "axios";
 const Home = () => {
 	useEffect(() => {
 		axios
-			.get("http://localhost:8080/goods")
+			.get("http://localhost:8080/goods", {
+				params: {
+					_limit: 10,
+				},
+			})
+
 			.then((data) => {
+				console.log(data);
 				globalDispatch({
 					type: "DISPLAYED_PRODUCTS",
 					payload: data.data,
