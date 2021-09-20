@@ -8,8 +8,22 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import context from "../Context/context";
+import { NotificationManager } from "react-notifications";
 
 const Home = () => {
+	const createNotification = (type) => {
+		switch (type) {
+			case "success":
+				return NotificationManager.success(
+					"Selected Product",
+					"Aded to cart",
+					2000
+				);
+			default:
+				break;
+		}
+	};
+
 	const { globalState, globalDispatch } =
 		useContext(context);
 
@@ -47,12 +61,12 @@ const Home = () => {
 									<div className="all-center">
 										<Link
 											to={`/product/${product.name}`}
-											onClick={() =>
+											onClick={() => {
 												globalDispatch({
 													type: "SELECT_ITEM",
 													payload: { product },
-												})
-											}
+												});
+											}}
 										>
 											<div className="product-img-small-box  ">
 												<img
@@ -106,12 +120,15 @@ const Home = () => {
 												className="quick-add-to-cart"
 												color="secondary"
 												fontSize="large"
-												onClick={() =>
+												onClick={() => {
 													globalDispatch({
 														type: "ADD_TO_CART",
 														payload: product,
-													})
-												}
+													});
+													createNotification(
+														"success"
+													);
+												}}
 											/>
 										</div>
 									</div>

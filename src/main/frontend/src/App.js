@@ -15,6 +15,9 @@ import ProductInfo from "./components/pages/ProductInfo";
 import Cart from "./components/pages/Cart";
 import Products from "./components/pages/Products";
 
+import { NotificationContainer } from "react-notifications";
+import "react-notifications/lib/notifications.css";
+
 function App() {
 	return (
 		<GlobalStateProvider>
@@ -22,6 +25,7 @@ function App() {
 				<div className="App">
 					<NavBar />
 					<div className="container"></div>
+					<NotificationContainer />
 					<Switch>
 						<Route
 							exact

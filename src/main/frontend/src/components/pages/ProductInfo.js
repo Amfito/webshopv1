@@ -5,7 +5,22 @@ import React, {
 import Axios from "axios";
 import context from "../Context/context";
 
+import { NotificationManager } from "react-notifications";
+
 const ProductInfo = () => {
+	const createNotification = (type) => {
+		switch (type) {
+			case "success":
+				return NotificationManager.success(
+					"Selected Product",
+					"Aded to cart",
+					2000
+				);
+			default:
+				break;
+		}
+	};
+
 	const { globalState, globalDispatch } =
 		useContext(context);
 
@@ -70,12 +85,13 @@ const ProductInfo = () => {
 							)}
 							<div
 								className="add-to-cart"
-								onClick={() =>
+								onClick={() => {
 									globalDispatch({
 										type: "ADD_TO_CART",
 										payload: product,
-									})
-								}
+									});
+									createNotification("success");
+								}}
 							>
 								<h2 className="button-text">
 									Add to cart
