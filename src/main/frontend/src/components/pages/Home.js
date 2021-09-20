@@ -73,17 +73,17 @@ const Home = () => {
 								<div className="card-content flex-collumn ">
 									<div className="all-center">
 										<Link
-											to={`/product/${product.name}`}
-											onClick={() => {
-												globalDispatch({
-													type: "SELECT_ITEM",
-													payload: { product },
-												});
-											}}
+											to={`/product/${product.id}`}
+											// onClick={() => {
+											// 	globalDispatch({
+											// 		type: "SELECT_ITEM",
+											// 		payload: { product },
+											// 	});
+											// }}
 										>
 											<div className="product-img-small-box  ">
 												<img
-													src={product.img}
+													src={product.image}
 													alt=""
 													className="product-img "
 												/>

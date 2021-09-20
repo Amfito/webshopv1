@@ -10,9 +10,11 @@ import axios from "axios";
 
 const ProductInfo = () => {
 	useEffect(() => {
+		const link = window.location.pathname;
+		const linkParts = link.split("/");
 		axios
 			.get(
-				"http://localhost:8080/goods/:prductId"
+				`http://localhost:8080/goods/${linkParts[2]}`
 			)
 			.then((data) => {
 				globalDispatch({
@@ -38,14 +40,13 @@ const ProductInfo = () => {
 	const { globalState, globalDispatch } =
 		useContext(context);
 
-	const product = globalState.product.product;
+	const product = globalState.product;
 
 	useEffect(() => {
 		Axios.get("/api/");
 		return () => {};
 	}, []);
 
-	console.log(globalState);
 	return (
 		<div className="main-box">
 			<div className="content-box">
@@ -53,7 +54,7 @@ const ProductInfo = () => {
 					<div className="product-info-box-atributes">
 						<div className="product-img-box">
 							<img
-								src={product.img}
+								src={product.image}
 								alt=""
 								className="product-info-img"
 							></img>

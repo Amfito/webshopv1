@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import context from "../Context/context";
-
+import { Link } from "react-router-dom";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 
@@ -24,11 +24,15 @@ const Cart = () => {
 					return (
 						<div className="cart-product-box">
 							<div className="cart-image-box">
-								<img
-									src={product.img}
-									alt=""
-									className="cart-product-img"
-								/>
+								<Link
+									to={`/product/${product.id}`}
+								>
+									<img
+										src={product.image}
+										alt=""
+										className="cart-product-img"
+									/>
+								</Link>
 							</div>
 							<div className="cart-product-info-box">
 								<h1>{product.name}</h1>
