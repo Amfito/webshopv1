@@ -9,8 +9,21 @@ import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import context from "../Context/context";
 import { NotificationManager } from "react-notifications";
+import ProductServices from "../Services/ProductServices";
+import axios from "axios";
 
 const Home = () => {
+	useEffect(() => {
+		axios
+			.get("http://localhost:8080/goods")
+			.then((data) => {
+				globalDispatch({
+					type: "DISPLAYED_PRODUCTS",
+					payload: data.data,
+				});
+			});
+	});
+
 	const createNotification = (type) => {
 		switch (type) {
 			case "success":

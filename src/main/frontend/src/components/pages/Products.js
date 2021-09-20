@@ -50,7 +50,7 @@ const Products = () => {
 								<div className="card-content flex-collumn ">
 									<div className="all-center">
 										<Link
-											to={`/product/${product.name}`}
+											to={`/product/${product.id}`}
 											onClick={() => {
 												globalDispatch({
 													type: "SELECT_ITEM",

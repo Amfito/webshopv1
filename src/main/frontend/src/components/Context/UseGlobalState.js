@@ -20,83 +20,6 @@ const initialState = {
 			description:
 				"The PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020",
 		},
-		/*Hidden*/
-
-		{
-			id: 2,
-			name: "Cannon 5D MK IV",
-			price: 900.5,
-			img: "http://www.ibserviss.lv/623-thickbox_default/canon-eos-5d-mark-iv.jpg",
-			sale: 0,
-			count: 1,
-			manufactorer: "Sony",
-			atribute: {
-				name: "Storage",
-				value: "1tb",
-			},
-			description:
-				"The PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020",
-		},
-		{
-			id: 3,
-			name: "Google Home mini",
-			price: 99.99,
-			img: "https://lh3.googleusercontent.com/7pq6Fhyz_qUGO8ORh6y0Bn6g7lRSBg3yHkNBXmt51g-mc2Viuv6LMjk4E0NXZGI7Rk4",
-			sale: 45.55,
-			count: 1,
-			manufactorer: "Sony",
-			atribute: {
-				name: "Storage",
-				value: "1tb",
-			},
-			description:
-				"The PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020",
-		},
-		{
-			id: 4,
-			name: "Xbox One",
-			price: 320.99,
-			img: "https://news.microsoft.com/wp-content/uploads/sites/439/2016/12/XboxOneS_CnsleCntrllr_Hrz_FrntTlt_TransBG_RGB.png",
-			sale: 300.99,
-			count: 1,
-			manufactorer: "Sony",
-			atribute: {
-				name: "Storage",
-				value: "1tb",
-			},
-			description:
-				"The PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020",
-		},
-		{
-			id: 5,
-			name: "Nintento Switch",
-			price: 225.99,
-			img: "https://m.media-amazon.com/images/I/41aaQR4AxkL.jpg",
-			sale: 180.99,
-			count: 1,
-			manufactorer: "Sony",
-			atribute: {
-				name: "Storage",
-				value: "1tb",
-			},
-			description:
-				"The PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020",
-		},
-		{
-			id: 6,
-			name: "NVIDIA RTX 2080 Ti",
-			price: 9999.99,
-			img: "https://m.media-amazon.com/images/I/8188NNMGDOL._AC_SL1500_.jpg",
-			sale: 0,
-			count: 1,
-			manufactorer: "Sony",
-			atribute: {
-				name: "Storage",
-				value: "1tb",
-			},
-			description:
-				"The PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020",
-		},
 	],
 };
 
@@ -105,6 +28,16 @@ const reducer = (
 	action
 ) => {
 	switch (action.type) {
+		case "GET_BY_ID":
+			return {
+				...state,
+				product: action.payload,
+			};
+		case "DISPLAYED_PRODUCTS":
+			return {
+				...state,
+				products: action.payload,
+			};
 		case "SELECT_CATEGORY":
 			return {
 				...state,

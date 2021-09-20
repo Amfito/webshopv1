@@ -32,7 +32,7 @@ const Cart = () => {
 							</div>
 							<div className="cart-product-info-box">
 								<h1>{product.name}</h1>
-								<h2>{product.manufactorer}</h2>
+								<h2>{product.brand}</h2>
 							</div>
 							<div className="cart-price-box">
 								{product.sale > 0 ? (

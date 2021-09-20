@@ -6,8 +6,22 @@ import Axios from "axios";
 import context from "../Context/context";
 
 import { NotificationManager } from "react-notifications";
+import axios from "axios";
 
 const ProductInfo = () => {
+	useEffect(() => {
+		axios
+			.get(
+				"http://localhost:8080/goods/:prductId"
+			)
+			.then((data) => {
+				globalDispatch({
+					type: "GET_BY_ID",
+					payload: data.data,
+				});
+			});
+	});
+
 	const createNotification = (type) => {
 		switch (type) {
 			case "success":
@@ -49,11 +63,10 @@ const ProductInfo = () => {
 								{product.name}
 							</h1>
 							<h2 className="product-info-text">
-								{product.manufactorer}
+								{product.brand}
 							</h2>
 							<h2 className="product-info-text">
-								{product.atribute.name} :{" "}
-								{product.atribute.value}
+								{product.atribute}
 							</h2>
 							{product.sale > 0 ? (
 								<h3
@@ -78,7 +91,7 @@ const ProductInfo = () => {
 										fontSize: "2rem",
 									}}
 								>
-									$ {product.sale}
+									$ {product.salesprice}
 								</h3>
 							) : (
 								<h3> </h3>
