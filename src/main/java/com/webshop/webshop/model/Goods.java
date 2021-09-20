@@ -19,13 +19,14 @@ public class Goods {
     private double price;
     private double salesprice;
     private Long id;
+    private int count;
 
 
 
     public Goods() {
     }
 
-    public Goods(String name, String brand, String model, String description, String category, String attributes, String image, double price, double salesprice) {
+    public Goods(String name, String brand, String model, String description, String category, String attributes, String image, double price, double salesprice, int count) {
         this.name = name;
         this.brand = brand;
         this.model = model;
@@ -35,6 +36,8 @@ public class Goods {
         this.image = image;
         this.price = price;
         this.salesprice = salesprice;
+        this.count = count;
+
     }
 
     public String getName() {
@@ -119,6 +122,14 @@ public class Goods {
         return id;
     }
 
+    public int getCount() {
+        return count;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
+    }
+
     @Override
     public String toString() {
         return "Goods{" +
@@ -132,6 +143,7 @@ public class Goods {
                 ", price=" + price +
                 ", salesprice=" + salesprice +
                 ", id=" + id +
+                ", count=" + count +
                 '}';
     }
 }
