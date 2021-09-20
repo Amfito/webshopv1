@@ -11,7 +11,7 @@ const About = () => {
     return (
         <div>
             <div className="main-box">
-                <div data-aos="zoom-in"className="content-box py-3">
+                <div data-aos="zoom-in" className="content-box py-3">
                     <h1 className="about-title ">About</h1>
                     <p className="about-decription">This webshop is created for learning purpuses to implement and test our skills.
                         The goal is to create fully functional tech webshop using tools like Postgre sql for Back end,
