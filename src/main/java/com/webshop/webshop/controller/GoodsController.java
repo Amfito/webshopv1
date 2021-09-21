@@ -9,15 +9,12 @@ import com.webshop.webshop.config.ConstatConfig;
 import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {ConstatConfig.rootUrl})
 @RestController
 public class GoodsController {
 
     @Autowired
     private GoodsService goodsService;
-
-//    public ConstatConfig constatConfig;
-    // private GoodsRepository goodsRepository;
 
     // get all goods from database
     @CrossOrigin(origins = {ConstatConfig.rootUrl})
