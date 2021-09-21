@@ -9,8 +9,30 @@ import { Link } from "react-router-dom";
 import context from "../Context/context";
 import AddIcon from "@material-ui/icons/Add";
 import { NotificationManager } from "react-notifications";
+import axios from "axios";
 
 const Products = () => {
+	useEffect(() => {
+		const link = window.location.pathname;
+		const linkParts = link.split("/");
+		axios
+			.get(
+				`http://localhost:8080/goods/category/${linkParts[2].toLowerCase()}`,
+				{
+					params: {
+						_limit: 10,
+					},
+				}
+			)
+
+			.then((data) => {
+				console.log(data);
+				globalDispatch({
+					type: "DISPLAYED_PRODUCTS",
+					payload: data.data,
+				});
+			});
+	});
 	const createNotification = (type) => {
 		switch (type) {
 			case "success":
@@ -73,7 +95,8 @@ const Products = () => {
 												{product.name}
 											</h2>
 											<div className="flex-row">
-												{product.sale > 0 ? (
+												{product.salesprice >
+												0 ? (
 													<h3
 														className="prdouct-price"
 														style={{
@@ -88,14 +111,15 @@ const Products = () => {
 														$ {product.price}
 													</h3>
 												)}
-												{product.sale > 0 ? (
+												{product.salesprice >
+												0 ? (
 													<h3
 														className="prdouct-price-sale"
 														style={{
 															paddingLeft: "1rem",
 														}}
 													>
-														$ {product.sale}
+														$ {product.salesprice}
 													</h3>
 												) : (
 													<h3> </h3>

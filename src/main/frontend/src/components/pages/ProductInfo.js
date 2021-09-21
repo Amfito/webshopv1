@@ -69,7 +69,7 @@ const ProductInfo = () => {
 							<h2 className="product-info-text">
 								{product.atribute}
 							</h2>
-							{product.sale > 0 ? (
+							{product.salesprice > 0 ? (
 								<h3
 									className="product-info-text"
 									style={{
@@ -84,7 +84,7 @@ const ProductInfo = () => {
 									$ {product.price}
 								</h3>
 							)}
-							{product.sale > 0 ? (
+							{product.salesprice > 0 ? (
 								<h3
 									className="prdouct-price-sale"
 									style={{

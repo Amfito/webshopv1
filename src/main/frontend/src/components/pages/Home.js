@@ -28,7 +28,7 @@ const Home = () => {
 					payload: data.data,
 				});
 			});
-	});
+	}, []);
 
 	const createNotification = (type) => {
 		switch (type) {
@@ -98,11 +98,12 @@ const Home = () => {
 									</div>
 									<div className="card-info-box">
 										<div className="card-discription ">
-											<h2 className="prdouct-name">
+											<h4 className="prdouct-name">
 												{product.name}
-											</h2>
+											</h4>
 											<div className="flex-row">
-												{product.sale > 0 ? (
+												{product.salesprice >
+												0 ? (
 													<h3
 														className="prdouct-price"
 														style={{
@@ -117,14 +118,15 @@ const Home = () => {
 														$ {product.price}
 													</h3>
 												)}
-												{product.sale > 0 ? (
+												{product.salesprice >
+												0 ? (
 													<h3
 														className="prdouct-price-sale"
 														style={{
 															paddingLeft: "1rem",
 														}}
 													>
-														$ {product.sale}
+														$ {product.salesprice}
 													</h3>
 												) : (
 													<h3> </h3>

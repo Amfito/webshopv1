@@ -262,7 +262,7 @@ main.box:before {
 
 /* Text Styles*/
 .prdouct-name {
-	font-size: 1.5rem;
+	font-size: 1rem;
 	color: #1a1a1a;
 }
 .prdouct-price {
@@ -454,12 +454,14 @@ main.box:before {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
-	justify-content: flex-end;
+	justify-content: flex-start;
 	height: 4rem;
 }
 .card-info-box {
 	display: flex;
 	flex-direction: row;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	width: 100%;
 }
 

@@ -15,8 +15,9 @@ const Cart = () => {
 		<div className="main-box">
 			<div className="content-box">
 				{cart.map((product, index) => {
-					if (product.sale > 0) {
-						total += product.sale * product.count;
+					if (product.salesprice > 0) {
+						total +=
+							product.salesprice * product.count;
 					} else {
 						total +=
 							product.price * product.count;
@@ -39,7 +40,7 @@ const Cart = () => {
 								<h2>{product.brand}</h2>
 							</div>
 							<div className="cart-price-box">
-								{product.sale > 0 ? (
+								{product.salesprice > 0 ? (
 									<h3
 										className="cart-product-price"
 										style={{
@@ -56,9 +57,9 @@ const Cart = () => {
 										$ {product.price}{" "}
 									</h3>
 								)}
-								{product.sale > 0 ? (
+								{product.salesprice > 0 ? (
 									<h3 className="cart-product-price-sale">
-										$ {product.sale}
+										$ {product.salesprice}
 									</h3>
 								) : (
 									<h3> </h3>
