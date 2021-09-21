@@ -49,7 +49,7 @@ public class SecurityConfig<CustomAuthenticationProvider> extends WebSecurityCon
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/goods/category").authenticated()
+                .antMatchers("/goods/byname").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()

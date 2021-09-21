@@ -21,7 +21,7 @@ public class UserRepositoryTests {
 
     @Autowired
     private UserRepository repo;
-
+    //integration test
     @Test
     public void testCreateUser() {
         User user = new User();
