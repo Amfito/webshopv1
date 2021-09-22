@@ -11,17 +11,16 @@ import AddIcon from "@material-ui/icons/Add";
 import { NotificationManager } from "react-notifications";
 import axios from "axios";
 
-const Products = () => {
+const PcParts = () => {
 	useEffect(() => {
-		const link = window.location.pathname;
-		const linkParts = link.split("/");
+		const abortControler = new AbortController();
+
 		axios
+
 			.get(
-				`http://localhost:8080/goods/category/${linkParts[2].toLowerCase()}`,
+				`http://localhost:8080/goods/category/pcparts`,
 				{
-					params: {
-						_limit: 10,
-					},
+					signal: abortControler.signal,
 				}
 			)
 
@@ -32,7 +31,8 @@ const Products = () => {
 					payload: data.data,
 				});
 			});
-	});
+		return () => abortControler.abort();
+	}, []);
 	const createNotification = (type) => {
 		switch (type) {
 			case "success":
@@ -156,4 +156,4 @@ const Products = () => {
 	);
 };
 
-export default Products;
+export default PcParts;

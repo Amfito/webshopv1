@@ -7,6 +7,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import com.webshop.webshop.config.ConstatConfig;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class UserController {
@@ -14,6 +16,7 @@ public class UserController {
     @Autowired
     private UserRepository userRepo;
 
+    @CrossOrigin(origins = { ConstatConfig.rootUrl })
     @RequestMapping(value = "/process_register", method = RequestMethod.POST)
     public String processRegistration(User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();

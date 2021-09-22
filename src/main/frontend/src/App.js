@@ -13,7 +13,13 @@ import About from "./components/pages/About.js";
 import Footer from "./components/layout/Footer.js";
 import ProductInfo from "./components/pages/ProductInfo";
 import Cart from "./components/pages/Cart";
-import Products from "./components/pages/Products";
+import Register from "./components/pages/Register";
+
+import PcParts from "./components/pages/PcParts";
+import HomeTech from "./components/pages/HomeTech";
+import Gaming from "./components/pages/Gaming";
+
+import AddProduct from "./components/Services/AddProduct";
 
 import { NotificationContainer } from "react-notifications";
 import "react-notifications/lib/notifications.css";
@@ -49,8 +55,28 @@ function App() {
 						/>
 						<Route
 							exact
-							path="/products/:categoryId"
-							component={Products}
+							path="/products/pcParts"
+							component={PcParts}
+						/>
+						<Route
+							exact
+							path="/products/homeTech"
+							component={HomeTech}
+						/>
+						<Route
+							exact
+							path="/products/gaming"
+							component={Gaming}
+						/>
+						<Route
+							exact
+							path="/register"
+							component={Register}
+						/>
+						<Route
+							exact
+							path="/addproduct"
+							component={AddProduct}
 						/>
 					</Switch>
 					<Footer />

@@ -68,6 +68,7 @@ const Cart = () => {
 							<div className="cart-amount-box">
 								<AddIcon
 									fontSize="large"
+									style={{ cursor: "pointer" }}
 									onClick={() =>
 										globalDispatch({
 											type: "INCREASE_COUNT",
@@ -83,6 +84,7 @@ const Cart = () => {
 									: ""}
 								<h2>{product.count}</h2>
 								<RemoveIcon
+									style={{ cursor: "pointer" }}
 									fontSize="large"
 									onClick={() =>
 										globalDispatch({

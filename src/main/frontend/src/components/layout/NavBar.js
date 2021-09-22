@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import InfoOutlinedIcon from "@material-ui/icons/InfoOutlined";
 import HomeIcon from "@material-ui/icons/Home";
 
@@ -38,11 +39,11 @@ const NavBar = ({ title, subTitle }) => {
 					HOME TECH
 				</Link>
 				<Link
-					to={`/products/${"gaiming"}`}
+					to={`/products/${"gaming"}`}
 					onClick={() =>
 						globalDispatch({
 							type: "SELECT_CATEGORY",
-							payload: "gaiming",
+							payload: "gaming",
 						})
 					}
 				>
@@ -50,6 +51,9 @@ const NavBar = ({ title, subTitle }) => {
 				</Link>
 			</ul>
 			<ul className="navBarMenu">
+				<Link to="/register">
+					<PersonOutlineIcon fontSize="large" />
+				</Link>
 				<Link to="/cart">
 					<ShoppingCartOutlinedIcon fontSize="large" />
 				</Link>

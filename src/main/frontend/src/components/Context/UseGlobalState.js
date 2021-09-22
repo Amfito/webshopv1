@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 
 const initialState = {
+	valid: false,
 	selectedCategory: "",
 	product: {},
 	cart: [],
@@ -28,6 +29,11 @@ const reducer = (
 	action
 ) => {
 	switch (action.type) {
+		case "SET_WALIDATION":
+			return {
+				...state,
+				valid: action.payload,
+			};
 		case "GET_BY_ID":
 			return {
 				...state,
