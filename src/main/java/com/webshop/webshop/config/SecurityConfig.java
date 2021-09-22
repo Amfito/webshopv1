@@ -49,7 +49,8 @@ public class SecurityConfig<CustomAuthenticationProvider> extends WebSecurityCon
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/goods/byname").authenticated()
+ //               .antMatchers("/goods").hasAnyAuthority("USER")
+ //               .antMatchers("http://localhost:3000/products/pcParts").hasAnyAuthority("ADMIN")
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()

@@ -1,6 +1,8 @@
 package com.webshop.webshop.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -18,6 +20,22 @@ public class User {
 
     @Column(name = "username", nullable = false, length = 20)
     private String username;
+
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_roles",
+            joinColumns = @JoinColumn(name = "id"),
+            inverseJoinColumns = @JoinColumn(name = "roles_id")
+    )
+    private Set<Roles> roles = new HashSet<>();
+
+    public Set<Roles> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Roles> roles) {
+        this.roles = roles;
+    }
 
     public Long getId() {
         return id;

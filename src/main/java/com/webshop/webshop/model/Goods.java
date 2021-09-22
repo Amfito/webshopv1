@@ -21,8 +21,6 @@ public class Goods {
     private Long id;
     private int count;
 
-
-
     public Goods() {
     }
 
@@ -37,7 +35,6 @@ public class Goods {
         this.price = price;
         this.salesprice = salesprice;
         this.count = count;
-
     }
 
     public String getName() {

@@ -32,9 +32,11 @@ public class GoodsController {
 
     // add new goods
     @CrossOrigin(origins = {ConstatConfig.rootUrl})
-    @PostMapping
-    public void registerNewGoods(@RequestBody Goods goods) {
+    @RequestMapping(value = "/register_product", method = RequestMethod.POST)
+    public String registerNewGoods(Goods goods) {
+
         goodsService.addNewGoods(goods);
+        return "Product Registered";
     }
 
     // get goods by category
