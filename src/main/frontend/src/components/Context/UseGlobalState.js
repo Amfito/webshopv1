@@ -29,6 +29,11 @@ const reducer = (
 	action
 ) => {
 	switch (action.type) {
+		case "CHECKOUT":
+			return {
+				...state,
+				cart: [],
+			};
 		case "SET_WALIDATION":
 			return {
 				...state,

@@ -3,10 +3,24 @@ import context from "../Context/context";
 import { Link } from "react-router-dom";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
+import { NotificationManager } from "react-notifications";
 
 const Cart = () => {
 	const { globalState, globalDispatch } =
 		useContext(context);
+
+	const createNotification = (type) => {
+		switch (type) {
+			case "success":
+				return NotificationManager.success(
+					"Purchase completed",
+					"Successfully",
+					2000
+				);
+			default:
+				break;
+		}
+	};
 
 	let total = 0.0;
 	const cart = globalState.cart;
@@ -103,7 +117,13 @@ const Cart = () => {
 						{parseFloat(total).toFixed(2)}
 					</h1>
 				</div>
-				<div className="checkout">
+				<div
+					className="checkout"
+					onClick={() => {
+						createNotification("success");
+						globalDispatch({ type: "CHECKOUT" });
+					}}
+				>
 					<h2 className="button-text">
 						Checkout
 					</h2>

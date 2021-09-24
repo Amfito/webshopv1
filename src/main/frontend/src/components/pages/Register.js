@@ -49,7 +49,7 @@ const RegisterPage = () => {
 		});
 		createNotification("success");
 		axios.post(
-			`http://localhost:8080/process_register?email=${data.email}&password=${data.password}&username=${data.nickname}`
+			`http://localhost:8080/process_register?email=${data.email}&password=${data.password}&username=${data.username}`
 		);
 	};
 	console.log(errors);
